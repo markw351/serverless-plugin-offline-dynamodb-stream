@@ -69,6 +69,7 @@ class DynamoDBStreamReadable extends Readable {
       },
       options || {}
     );
+    console.log(shardId);
     return this.client
       .getShardIterator(params)
       .promise()
