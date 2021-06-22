@@ -49,7 +49,7 @@ class DynamoDBStreamReadable extends Readable {
         if (!data.StreamDescription.Shards.length) {
           throw new Error('No shards!');
         }
-
+        console.log(data.StreamDescription.Shards);
         debug('getShard found %d shards', data.StreamDescription.Shards.length);
 
         const [openShard] = data.StreamDescription.Shards.filter(
